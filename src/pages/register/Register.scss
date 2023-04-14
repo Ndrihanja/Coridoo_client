@@ -1,0 +1,56 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.register-page {
+    width: 100%;
+    height: 100vh;
+    @include horizontal-list;
+    color: white;
+
+    .register-right {
+        width: 50%;
+        @include vertical-list;
+        justify-content: center;
+        align-items: center;
+        
+        .register-right-content {
+            background-color: $dark-gray;
+            padding: 3rem;
+            border-radius: 1rem;
+            @include vertical-list;
+            align-items: right;
+            gap: 3rem;
+            
+            .register-logo {
+                margin-bottom: 1rem;
+
+                img {
+                    width: 200px;
+                }
+            }
+
+            .title {
+                text-align: center;
+                h1 {
+                    margin-bottom: 0.8rem;
+                }
+            }
+
+            .btn-Submit {
+                margin-top: 1rem;
+                width: 50%;
+            }
+        }
+    }
+
+    .register-left {
+        width: 50%;
+        @include vertical-list;
+        justify-content: center;
+
+        img {
+            width: 90%;
+        }
+    }
+}

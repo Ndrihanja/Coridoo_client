@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.content-page {
+    width: $col-6;
+    background: $dark-gray;
+    margin: 0.3rem 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: white;
+    padding: 1rem 1rem;
+    padding-bottom: .5rem;
+    height: calc(100vh - 0.6rem);
+}

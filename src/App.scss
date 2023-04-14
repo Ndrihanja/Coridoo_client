@@ -1,0 +1,215 @@
+@import "./styles/variables";
+@import "./styles/mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    font-family: $font-text;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.App {
+    width: 100%;
+    overflow: hidden;
+}
+
+.content-page-view {
+    height: 100%;
+}
+
+.empty-view {
+    @include vertical-list;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+    color: $text-primary;
+
+    i {
+        font-size: 10rem;
+        opacity: .1;
+    }
+
+    h4 {
+        opacity: .25;
+    }
+}
+
+.text-small {
+    font-size: $text-small;
+}
+
+.lien {
+    font-size: $text;
+    color: $text-primary;
+    transition: all .4s;
+
+    &:hover {
+        color: $violet;
+    }
+}
+
+.rouge {
+    color: $rouge;
+}
+
+.bleu {
+    color: $bleu;
+}
+
+.vert {
+    color: $vert;
+}
+
+.jaune {
+    color: $jaune;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn-Add {
+    outline: none;
+    border-radius: 7px;
+    padding: 10px;
+    background: $soft-gray;
+    color: white;
+    @include horizontal-list;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    border: 2px solid $border-color;
+    transition: .4s;
+
+    &:hover {
+        background: $gray;
+    }
+}
+
+form {
+    width: 100%;
+    @include vertical-list;
+    gap: 1rem;
+}
+
+.form-group {
+    @include vertical-list;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    width: 100%;
+    gap: 5px;
+    font-size: $text;
+}
+
+.form-groups {
+    width: 100%;
+    @include horizontal-list;
+    gap: 1rem;
+}
+
+textarea,
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    background: $light-gray;
+    color: white;
+    border: none;
+    outline-color: transparent;
+    border-radius: 7px;
+
+    &:focus {
+        outline: solid 1px $violet;
+    }
+
+    &:focus+label {
+        color: $violet;
+    }
+}
+
+.btn-Submit {
+    background: $pastel;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 7px;
+    
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.btn-Danger {
+    outline: solid 1px rgba(255, 0, 0, 0.7);
+    border-radius: 7px;
+    padding: 10px;
+    background: rgba(255, 0, 0, 0.3);
+    color: white;
+    @include horizontal-list;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    transition: .4s;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background:transparent;
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #555; 
+    border: 3px solid transparent;
+    border-radius: 9px;
+    background-clip: content-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $violet;
+    border: 3px solid transparent;
+    border-radius: 9px;
+    background-clip: content-box;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

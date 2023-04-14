@@ -1,0 +1,262 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.task {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .choice-form {
+        @include horizontal-list;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+        padding: 1rem 0;
+        border-bottom: 2px solid $border-color;
+        font-size: $text;
+
+        .choices {
+            @include horizontal-list;
+            gap: .3rem;
+
+            span {
+                padding: 5px 10px;
+                border-radius: 4px;
+                cursor: pointer;
+                color: $text-primary;
+                @include horizontal-list;
+                align-items: baseline;
+                gap: 1ch;
+                transition: .4s;
+
+                &.active {
+                    background: $light-gray;
+                    color: white;
+                }
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: $text-primary;
+            @include horizontal-list;
+            align-items: baseline;
+            gap: 1ch;
+            transition: .4s;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    section {
+        height: 100%;
+        position: relative;
+
+
+        .task-modal {
+            background: $gray;
+            width: 60%;
+            border-radius: 10px;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 1.5rem 2rem;
+            @include vertical-list;
+            gap: 1rem;
+
+            .modal-header {
+                @include horizontal-list;
+                justify-content: space-between;
+                width: 100%;
+
+                i {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .parent-scroll {
+        overflow-x: scroll;
+        height: 85%;
+
+        .task-card {
+            @include horizontal-list;
+            gap: .3rem;
+            width: 850px;
+            height: 100%;
+
+            &>div {
+                width: 100%;
+                height: 100%;
+                @include vertical-list;
+                align-items: flex-start;
+                gap: 0.2rem;
+                padding: 10px;
+                padding-left: 0;
+
+                .task-head {
+                    width: 100%;
+                    @include horizontal-list;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: $text-primary;
+                    font-size: 14px;
+
+                    .task-title {
+                        @include horizontal-list;
+                        align-items: center;
+                        gap: 5px;
+
+                        .task-color {
+                            height: 5px;
+                            width: 5px;
+                            border-radius: 100%;
+                        }
+
+                        .task-status {
+                            color: white;
+                        }
+
+                        .task-count {
+                            font-size: $text;
+                        }
+                    }
+                }
+
+                &.new {
+                    .task-color {
+                        background: $rouge;
+                    }
+
+                    button {
+                        background: $gray;
+                        padding: .8ch;
+                        margin-top: .3rem;
+                    }
+                }
+
+                &.in-progress {
+                    .task-color {
+                        background: $bleu;
+                    }
+                }
+
+                &.completed {
+                    .task-color {
+                        background: $vert;
+                    }
+                }
+
+                &.pending {
+                    .task-color {
+                        background: $jaune;
+                    }
+                }
+
+                .card-list {
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: scroll;
+
+                    .card-scroll {
+                        height: auto;
+                        width: 100%;
+
+                        .card {
+                            @include vertical-list;
+                            width: 100%;
+                            gap: 2px;
+                            overflow: hidden;
+                            border-radius: 7px;
+                            margin-top: 5px;
+
+                            .card-top {
+                                width: 100%;
+                                background: $gray;
+                                @include vertical-list;
+                                gap: 10px;
+                                padding: 10px;
+
+                                .top-header {
+                                    width: 100%;
+                                    @include horizontal-list;
+                                    align-items: center;
+                                    justify-content: space-between;
+
+                                    span {
+                                        font-size: $text-small;
+                                        padding: 2px 5px;
+                                        background: $pastel;
+                                        border-radius: 20px;
+                                        color: black;
+                                        font-weight: 700;
+                                    }
+
+                                    i {
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .top-desc {
+                                    h6 {
+                                        width: 20ch;
+                                        font-size: 14px;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+
+                                    p {
+                                        margin-top: 3px;
+                                        font-size: $text;
+                                        color: $text-primary;
+                                    }
+                                }
+                            }
+
+                            .card-bottom {
+                                width: 100%;
+                                background: $gray;
+                                padding: 5px 10px;
+                                @include horizontal-list;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                img {
+                                    height: 30px;
+                                    width: 30px;
+                                    object-fit: cover;
+                                    border-radius: 100%;
+                                    border: 2px solid $gray;
+                                }
+
+                                span {
+                                    color: $text-primary;
+                                    font-size: 12px;
+                                    cursor: pointer;
+
+                                    i {
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

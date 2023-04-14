@@ -1,0 +1,152 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.view-project {
+    @include vertical-list;
+    height: 100%;
+
+    .header {
+        width: 100%;
+        @include vertical-list;
+
+        .title-params {
+            width: 100%;
+            @include horizontal-list;
+            justify-content: space-between;
+            align-items: center;
+
+            .title {
+                h2 {
+                    @include horizontal-list;
+                    align-items: center;
+                    gap: 15px;
+                }
+
+            }
+
+            .options {
+                @include horizontal-list;
+                align-items: center;
+                gap: 1rem;
+
+                .form-search {
+                    width: 100%;
+                    @include horizontal-list;
+                    align-items: center;
+                    gap: 1rem;
+                    color: $text-primary;
+
+                    #search {
+                        background: transparent;
+                        border: none;
+                        outline: none;
+                        color: white;
+                        padding: 1ch 0;
+
+                        &:focus {
+                            border-bottom: 1px solid $border-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        p {
+            position: relative;
+            width: 100%;
+            font-size: $text;
+            color: $text-primary;
+            padding-left: 2.7rem;
+            margin-top: .5rem;
+
+            &:after {
+                content: "";
+                width: 2ch;
+                height: 2.3ch;
+                position: absolute;
+                left: 1.5rem;
+                top: -0.5rem;
+                border-bottom-left-radius: 7px;
+                border-left: 2px solid $light-gray;
+                border-bottom: 2px solid $light-gray;
+
+            }
+        }
+
+        .projet-tabs {
+            width: 100%;
+            margin-top: 1.5rem;
+            @include horizontal-list;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid $border-color;
+
+            .tab {
+                @include horizontal-list;
+                gap: 1rem;
+
+                a {
+                    padding: 1rem .5rem;
+                    color: $text-primary;
+                    font-size: 14px;
+
+                    &.active {
+                        color: white;
+                        border-bottom: 1px solid white;
+                    }
+                }
+            }
+
+            .avatars {
+                @include horizontal-list;
+                align-items: center;
+                gap: 10px;
+
+                .images {
+                    @include horizontal-list;
+                    align-items: center;
+
+                    &>* {
+                        margin-left: -10px;
+                    }
+
+                    img {
+                        height: 30px;
+                        width: 30px;
+                        object-fit: cover;
+                        border-radius: 100%;
+                        border: 2px solid $gray;
+                    }
+
+                    .membersCount {
+                        @include vertical-list;
+                        justify-content: center;
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 100%;
+                        font-size: $text;
+                        background: $light-gray;
+                    }
+                }
+
+                .separator {
+                    height: 1.5rem;
+                    width: 2px;
+                    background: $light-gray;
+                }
+
+                .btn-Add {
+                    border-radius: 100%;
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+    }
+
+    .content {
+        width: 100%;
+        height: calc(100% - 8rem);
+    }
+
+}

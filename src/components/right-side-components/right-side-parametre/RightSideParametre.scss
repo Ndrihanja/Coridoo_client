@@ -1,0 +1,66 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.rightSideParametre {
+    height: 100%;
+    width: 100%;
+    padding: 20px 30px;
+    @include vertical-list;
+    justify-content: space-between;
+
+    &>div {
+        width: 100%;
+    }
+
+    .parametres {
+        @include vertical-list;
+        align-items: flex-start;
+        gap: .5rem;
+        width: 100%;
+
+        li {
+            width: 100%;
+            background: rgba(128, 128, 128, 0.1);
+            border-radius: 7px;
+            overflow: hidden;
+
+            &.profile-view {
+                padding: 1rem;
+                @include vertical-list;
+                gap: 1rem;
+                text-align: center;
+
+                img {
+                    width: 175px;
+                    height: 175px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+
+                .user-details {
+                    span {
+                        font-size: $text;
+                        color: $text-primary;
+                    }
+                }
+            }
+
+            a {
+                width: 100%;
+                @include horizontal-list;
+                align-items: center;
+                gap: .5rem;
+                font-size: 14px;
+                color: $text-primary;
+                padding: .7rem;
+                transition: .4s;
+
+                &:hover {
+                    color: white;
+                    background: $soft-gray;
+                }
+            }
+        }
+    }
+    
+}

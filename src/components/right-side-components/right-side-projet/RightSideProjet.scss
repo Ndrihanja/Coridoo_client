@@ -1,0 +1,54 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.rightSideProject {
+    height: 100%;
+    width: 100%;
+    padding: 20px 30px;
+    @include vertical-list;
+
+    &>div {
+        width: 100%;
+    }
+    
+    .project-menu {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        
+        .form-search {
+            flex-grow: 0;
+            width: 100%;
+            @include horizontal-list;
+            align-items: center;
+            gap: 1rem;
+            color: $text-primary;
+
+            #search {
+                background: transparent;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 1ch 0;
+
+                &:focus {
+                    border-bottom: 1px solid $border-color;
+                }
+            }
+        }
+
+        .project-menu-list {
+            flex-grow: 1;
+            overflow-y: scroll;
+        }
+    }
+
+    .project-add {
+        flex-grow: 0;
+
+        a {
+            box-shadow: -10px 0 20px 15px black;
+        }
+    }
+}

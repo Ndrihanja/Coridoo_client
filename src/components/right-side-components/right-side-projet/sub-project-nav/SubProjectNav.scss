@@ -1,0 +1,47 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.projetNav {
+    li {
+        margin-top: 2ch;
+        @include horizontal-list;
+        align-items: center;
+        gap: 0.8rem;
+        cursor: pointer;
+        font-size: $text;
+        color: $text-primary;
+        transition: all .4s;
+        text-transform: uppercase;
+
+        i {
+            font-size: $text-small;
+        }
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .subnav-scroll {
+        max-height: 20ch;
+        overflow-y: scroll;
+
+        .subnav {
+            display: flex;
+            flex-direction: column;
+            gap: 1ch;
+            padding-top: 1ch;
+            padding-bottom: 2ch;
+            font-size: $text;
+
+            a {
+                @include horizontal-list;
+                align-items: center;
+                padding-top: .5rem;
+                padding-left: .7rem;
+                gap: 0.8rem;
+                color: $text-primary;
+            }
+        }
+    }
+}

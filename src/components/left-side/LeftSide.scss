@@ -1,0 +1,96 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.leftSide {
+    & {
+        width: 10ch;
+        padding: 57px 0;
+        border-right: 2px solid $border-color;
+        @include vertical-list;
+        justify-content: space-between;
+        color: $text-primary;
+
+        ul {
+            @include vertical-list;
+            gap: 2rem;
+            width: 100%;
+
+            li {
+                width: 100%;
+                @include vertical-list;
+            }
+
+            .nav-logo {
+                background: $gray;
+                width: auto;
+                padding: .5rem;
+                border-radius: 100%;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            a {
+                position: relative;
+                color: $text-primary;
+                transition: all .4s;
+                width: 100%;
+                text-align: center;
+
+                &:hover {
+                    color: white;
+                }
+
+                i {
+                    font-size: 17px;
+                }
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                    object-fit: cover;
+                    border-radius: 100%;
+                }
+
+                &.active {
+                    color: white;
+
+                    &::before {
+                        content: "";
+                        height: 4ch;
+                        width: 4px;
+                        background: white;
+                        position: absolute;
+                        left: 0;
+                        top: -1ch;
+                        border-top-right-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                    }
+
+                    &.parametre::before {
+                        content: "";
+                        height: 4ch;
+                        width: 4px;
+                        background: white;
+                        position: absolute;
+                        left: 0;
+                        top: -.5ch;
+                        border-top-right-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                    }
+                }
+
+                &.active i {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+
+
+
+
+}
